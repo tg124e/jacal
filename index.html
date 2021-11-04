@@ -1,0 +1,828 @@
+
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta content='notranslate' name='google'/>
+<link href='https://cdn.xn--2kr778m.online/android-chrome-512x512.png' rel='icon' sizes='512x512' type='image/png'/>
+<meta content='yes' name='apple-mobile-web-app-capable'/>
+<meta content='#fff' name='apple-mobile-web-app-status-bar-style'/>
+<meta content='電卓' name='apple-mobile-web-app-title'/>
+<meta content='https://cdn.xn--2kr778m.online/apple-touch-icon.png' name='apple-touch-icon'/>
+<meta content='width=device-width, initial-scale=1' name='viewport'/>
+<meta content='ja_JP' property='og:locale'/>
+<title>電卓</title>
+<meta content='https://cdn.xn--2kr778m.online/apple-touch-icon.png' name='msapplication-TileImage'/>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<meta content='足し算、引き算、掛け算、割り算には電卓ツールを使用してください。私たちのツールは、すべてのデバイスで完全に無料で動作します。' name='description'/>
+<link href='https://www.xn--2kr778m.online/favicon.ico' rel='icon' type='image/x-icon'/>
+<meta content='#fff' name='theme-color'/>
+<meta content='#fff' name='msapplication-navbutton-color'/>
+<link href='https://www.電卓.online/' rel='canonical'/>
+<link href='https://cdn.xn--2kr778m.online/%E9%9B%BB%E5%8D%93.online.png' rel='image_src'/>
+<meta content='website' property='og:type'/>
+<meta content='電卓' property='og:title'/>
+<meta content='https://www.電卓.online/' property='og:url'/>
+<meta content='足し算、引き算、掛け算、割り算には電卓ツールを使用してください。私たちのツールは、すべてのデバイスで完全に無料で動作します。' property='og:description'/>
+<meta content='電卓' property='og:site_name'/>
+<meta content='https://cdn.xn--2kr778m.online/%E9%9B%BB%E5%8D%93.online.png' property='og:image'/>
+<meta content='https://cdn.xn--2kr778m.online/%E9%9B%BB%E5%8D%93.online.png' name='twitter:image'/>
+<meta content='summary_large_image' name='twitter:card'/>
+<meta content='電卓' name='twitter:title'/>
+<meta content='https://www.電卓.online/' name='twitter:domain'/>
+<meta content='足し算、引き算、掛け算、割り算には電卓ツールを使用してください。私たちのツールは、すべてのデバイスで完全に無料で動作します。' name='twitter:description'/>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css' rel='stylesheet'/>
+<style>
+  ::selection {
+    color: #fff;
+    background: #0080ff;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    background: #f3f6f9;
+}
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+header a {
+    text-align: center;
+    background: #0080ff;
+    padding: 7px;
+    font-weight: 700;
+    color: #fff;
+    display: inherit;
+    text-decoration: none;
+    font-size: 24px;
+}
+footer {
+    background: #f4f5f7;
+    padding: 7px;
+    color: #000;
+}
+@media only screen and (max-width: 600px) {
+    .container {
+        margin: 5px;
+    }
+}
+#input,
+#output {
+    height: 50px;
+    font-size: 150%;
+    text-align: right;
+    border: none;
+}
+#input {
+    border-radius: 3px;
+    box-shadow: 2px #000;
+    color: #000;
+}
+#output {
+    border-radius: 3px;
+    box-shadow: 2px #000;
+    color: #444;
+}
+input[type="button"] {
+    background: #000;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    float: center;
+    font-size: 20px;
+    font-weight: 700;
+    height: 55px;
+    line-height: 50px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    width: 50px;
+}
+input[type="button"]:hover {
+    background: #0080ff;
+    cursor: pointer;
+}
+footer table {
+    border-collapse: collapse;
+    width: 100%;
+}
+footer td,
+th {
+    border: 1px solid #fff;
+    padding: 8px;
+}
+footer tr {
+    background-color: #0080ff;
+    color: #fff;
+}
+footer th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #08054d;
+    color: #fff;
+}
+a {
+    color: #0080ff;
+    font-weight: 700;
+    text-decoration: none;
+}
+nav a {
+    color: #0080ff;
+}
+nav {
+    background: #fff;
+}
+nav a {
+    display: inline-block;
+    padding: 13px 15px;
+}
+nav a:hover {
+    background: #f1f1f1;
+    color: #333;
+} 
+
+   </style>
+
+<script type='text/javascript'>
+//<![CDATA[
+var uri = window.location.toString();
+if (uri.indexOf("%3D","%3D") > 0) {
+var clean_uri = uri.substring(0, uri.indexOf("%3D"));
+window.history.replaceState({}, document.title, clean_uri);
+}
+var uri = window.location.toString();
+if (uri.indexOf("%3D%3D","%3D%3D") > 0) {
+var clean_uri = uri.substring(0, uri.indexOf("%3D%3D"));
+window.history.replaceState({}, document.title, clean_uri);
+}
+var uri = window.location.toString();
+if (uri.indexOf("&m=1","&m=1") > 0) {
+var clean_uri = uri.substring(0, uri.indexOf("&m=1"));
+window.history.replaceState({}, document.title, clean_uri);
+}
+var uri = window.location.toString();
+if (uri.indexOf("?m=1","?m=1") > 0) {
+var clean_uri = uri.substring(0, uri.indexOf("?m=1"));
+window.history.replaceState({}, document.title, clean_uri);
+}
+//]]>
+</script>
+  <script src='https://cdn.xn--2kr778m.online/script.js'></script>
+
+
+<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
+<meta name='google-adsense-platform-domain' content='blogspot.com'/>
+</head>
+<body>
+<div class='header section' id='header'><div class='widget HTML' data-version='1' id='HTML1'>
+<div class='widget-content'>
+<header>
+	  <a  href="/">電卓.online</a>
+		  	  </header>
+			    <center>
+			  <nav>
+			  <a href="/">Home</a>
+
+
+<a href="#privacy-policy">個人情報保護方針</a>
+			  </nav></center>
+</div>
+</div></div>
+<div class='main section' id='main'><div class='widget HTML' data-version='2' id='HTML11'>
+<div class='widget-content'>
+<center>
+<br/>
+	<div class="container">
+			
+   <table>
+            <tr>
+                <td>
+                    <input id="input" type="text" placeholder="0" readonly " />          
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input id="output" type="text" readonly />
+                </td>
+            </tr>
+</table></div></center>
+<center>
+            <tr>
+                <td>
+                    <input type="button" value="AC" onclick="clearScreen()" style="background: red;" />
+                    <input type="button" value="&#247;" onclick="getOperand(&#39;/&#39;)" />
+                    <input type="button" value="x" onclick="getOperand(&#39;x&#39;)" />
+                    <input type="button" value="()" onclick="brackets()" />
+                    <input type="button" value="C" onclick="backspace()" style="background: red;" />
+                    <br />
+                    <input type="button" value="1" onclick="getNumber(1)" />
+                    <input type="button" value="2" onclick="getNumber(2)" />
+                    <input type="button" value="3" onclick="getNumber(3)" />
+                    <input type="button" value="+" onclick="getOperand(&#39;+&#39;)" />
+                    <input type="button" value="sin" onclick="sin()" />
+                    <br />
+                    <input type="button" value="4" onclick="getNumber(4)" />
+                    <input type="button" value="5" onclick="getNumber(5)" />
+                    <input type="button" value="6" onclick="getNumber(6)" />
+                    <input type="button" value="-" onclick="getOperand(&#39;-&#39;)" />
+                    <input type="button" value="cos" onclick="cos()" />
+                    <br />
+                    <input type="button" value="7" onclick="getNumber(7)" />
+                    <input type="button" value="8" onclick="getNumber(8)" />
+                    <input type="button" value="9" onclick="getNumber(9)" />
+                    <input type="button" value="ln" onclick="ln()" />
+                    <input type="button" value="tan" onclick="tan()" />
+                    <br />
+                    <input type="button" value="+/-" onclick="getOperand(&#39;+/-&#39;)" />
+                    <input type="button" value="0" onclick="getNumber(0)" />
+                    <input type="button" value="π" onclick="pi()" />
+                    <input type="button" value="x^2" onclick="sqr()" />
+                    <input type="button" value="&#8730;" onclick="squrt()" />
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="%" onclick="per()" />
+                    <input type="button" value="Exp" onclick="expo()" />
+                    <input type="button" value="=" onclick="compute()" style="width: 170px; background: #21a900;" />
+                </td>
+            </tr>
+        
+		
+</center>
+</div>
+</div></div>
+<div class='footer section' id='footer'><div class='widget HTML' data-version='1' id='HTML2'>
+<div class='widget-content'>
+<footer>   
+<div class="text">
+	<div class="container">
+	<center>
+	<h1>電卓</h1>
+	
+	<b>足し算&#12289;引き算&#12289;掛け算&#12289;割り算には電卓ツールを使用してください&#12290;私たちのツールは&#12289;すべてのデバイスで完全に無料で動作します&#12290;</b>
+		<a href="https://cdn.xn--2kr778m.online/%E9%9B%BB%E5%8D%93.online.png">
+<img style="width:90%" alt="電卓" title="電卓" src="https://cdn.xn--2kr778m.online/%E9%9B%BB%E5%8D%93.online.png" />
+</a>
+	</center>
+	<h2>この計算機について</h2>
+	<p>ですから&#12289;皆さんは最高の電卓Webサイトへようこそ&#12290;多くの人は&#12289;使いやすいユーザーフレンドリーな電卓Webサイトを構築するように求められています&#12290;正確な答えを提供することができます&#12290;</p>
+	<h2>この計算ツールの機能</h2>
+	<p>私たちのウェブサイトには多くの機能があり&#12289;そのうちのいくつかは</p>
+	<ul>
+	<li>当社のウェブサイトは&#12289;最も高速に読み込まれる計算機のウェブサイトの1つです&#12290;ミリ秒単位でロードするようにウェブサイトを最適化しました</li>
+	<li>私たちのツールは&#12289;それを使用するためにいかなる種類のログインも必要としません&#12290;それは無料で使用できます&#12290;</li>
+	<li>10進数も計算できます</li>
+	<li>私たちのウェブサイトは非常にユーザーフレンドリーです&#12290;私たちはあなたの仕事を簡単にするために多くの余分なボタンを追加しました&#12290;</li>
+	<li>これで&#12289;sin&#12289;cos&#12289;tanを計算し&#12289;数値の根と二乗をとることができます&#12290;</li>
+	
+	</ul>
+	<h2>使い方 電卓.online</h2>
+	<p>私たちの計算機はとても使いやすいです&#12290;この計算機は&#12289;実際の計算機のように設計されており&#12289;よりユーザーフレンドリーになっています&#12290;それを使用するには&#12289;必要な数を入力し&#12289;実行する数学演算を選択し&#12289;等しいボタンをクリックするだけで&#12289;答えがすぐに表示されます&#12290;</p>
+	   <h2>このウェブサイトの仕組み</h2>
+	   <p>このウェブサイトは&#12289;単純なJavascriptの助けを借りて動作します&#12290;したがって&#12289;ブラウザがjavascriptをサポートしていることを確認してください&#12290;最近のほとんどすべてのブラウザはjavascriptをサポートしています&#12290;</p>
+<center>
+<h2>九九1&#12316;20</h2>
+</center>
+	<br/>
+	
+<table>
+<tbody>
+<tr>
+<td><strong>Table of 1</strong></td>
+<td><strong>Table of 2 </strong></td>
+<td><strong>Table of 3 </strong></td>
+<td><strong>Table of 4</strong></td>
+<td><strong>Table of 5</strong></td>
+</tr>
+<tr>
+<td>
+<p>1 &#215; 1 = 1</p>
+</td>
+<td>2 &#215; 1 = 2</td>
+<td>3 &#215; 1 = 3</td>
+<td>4 &#215; 1 = 4</td>
+<td>5 &#215; 1 = 5</td>
+</tr>
+<tr>
+<td>
+<p>2 &#215; 1 = 2</p>
+</td>
+<td>2 &#215; 2 = 4</td>
+<td>3 &#215; 2 = 6</td>
+<td>4 &#215; 2 = 8</td>
+<td>5 &#215; 2 = 10</td>
+</tr>
+<tr>
+<td>
+<p>3 &#215; 1 = 3</p>
+</td>
+<td>2 &#215; 3 = 6</td>
+<td>3 &#215; 3 = 9</td>
+<td>4 &#215; 3 = 12</td>
+<td>5 &#215; 3 = 15</td>
+</tr>
+<tr>
+<td>
+<p>4 &#215; 1 = 4</p>
+</td>
+<td>2 &#215; 4 = 8</td>
+<td>3 &#215; 4 = 12</td>
+<td>4 &#215; 4 = 16</td>
+<td>5 &#215; 4 = 20</td>
+</tr>
+<tr>
+<td>
+<p>5 &#215; 1 = 5</p>
+</td>
+<td>2 &#215; 5 = 10</td>
+<td>3 &#215; 5 = 15</td>
+<td>4 &#215; 5 = 20</td>
+<td>5 &#215; 5 = 25</td>
+</tr>
+<tr>
+<td>
+<p>6 &#215; 1 =6</p>
+</td>
+<td>2 &#215; 6 = 12</td>
+<td>3 &#215; 6 = 18</td>
+<td>4 &#215; 6 = 24</td>
+<td>5 &#215; 6 = 30</td>
+</tr>
+<tr>
+<td>
+<p>7 &#215; 1 = 7</p>
+</td>
+<td>2 &#215; 7 = 14</td>
+<td>3 &#215; 7 = 21</td>
+<td>4 &#215; 7 = 28</td>
+<td>5 &#215; 7 = 35</td>
+</tr>
+<tr>
+<td>
+<p>8 &#215; 1 = 8</p>
+</td>
+<td>2 &#215; 8 = 16</td>
+<td>3 &#215; 8 = 24</td>
+<td>4 &#215; 8 = 32</td>
+<td>5 &#215; 8 = 40</td>
+</tr>
+<tr>
+<td>
+<p>9 &#215; 1 = 9</p>
+</td>
+<td>2 &#215; 9 = 18</td>
+<td>3 &#215; 9 = 27</td>
+<td>4 &#215; 9 = 36</td>
+<td>5 &#215; 9 = 45</td>
+</tr>
+<tr>
+<td>
+<p>10 &#215; 1 = 10</p>
+</td>
+<td>2 &#215; 10 = 20</td>
+<td>3 &#215; 10 = 30</td>
+<td>4 &#215; 10 = 40</td>
+<td>5 &#215; 10 = 50</td>
+</tr>
+</tbody>
+</table>
+    <br/>
+		<br/>   
+<table>
+<tbody>
+<tr>
+<td><strong>Table of 6</strong></td>
+<td><strong>Table of 7</strong></td>
+<td><strong>Table of 8</strong></td>
+<td><strong>Table of 9</strong></td>
+<td><strong>Table of 10</strong></td>
+</tr>
+<tr>
+<td>6 &#215; 1 = 6</td>
+<td>7 &#215; 1 = 7</td>
+<td>
+<p>8 &#215; 1 = 8</p>
+</td>
+<td>9 &#215; 1 = 9</td>
+<td>10 &#215; 1 = 10</td>
+</tr>
+<tr>
+<td>
+<p>6 &#215; 2 = 12</p>
+</td>
+<td>7 &#215; 2 = 14</td>
+<td>8 &#215; 2 = 16</td>
+<td>9 &#215; 2 = 18</td>
+<td>10 &#215; 2 = 20</td>
+</tr>
+<tr>
+<td>
+<p>6 &#215; 3 = 18</p>
+</td>
+<td>7 &#215; 3 = 21</td>
+<td>8 &#215; 3 = 24</td>
+<td>9 &#215; 3 = 27</td>
+<td>10 &#215; 3 = 30</td>
+</tr>
+<tr>
+<td>
+<p>6 &#215; 4 = 24</p>
+</td>
+<td>7 &#215; 4 = 28</td>
+<td>8 &#215; 4 = 32</td>
+<td>9 &#215; 4 = 36</td>
+<td>10 &#215; 4 = 40</td>
+</tr>
+<tr>
+<td>
+<p>6 &#215; 5 = 30</p>
+</td>
+<td>7 &#215; 5 = 35</td>
+<td>8 &#215; 5 = 40</td>
+<td>9 &#215; 5 = 45</td>
+<td>10 &#215; 5 = 50</td>
+</tr>
+<tr>
+<td>
+<p>6 &#215; 6 = 36</p>
+</td>
+<td>7 &#215; 6 = 42</td>
+<td>8 &#215; 6 = 48</td>
+<td>9 &#215; 6 = 54</td>
+<td>10 &#215; 6 = 60</td>
+</tr>
+<tr>
+<td>
+<p>6 &#215; 7 = 42</p>
+</td>
+<td>7 &#215; 7 = 49</td>
+<td>8 &#215; 7 = 56</td>
+<td>9 &#215; 7 = 63</td>
+<td>10 &#215; 7 = 70</td>
+</tr>
+<tr>
+<td>
+<p>6 &#215; 8 = 48</p>
+</td>
+<td>7 &#215; 8 = 56</td>
+<td>8 &#215; 8 = 64</td>
+<td>9 &#215; 8 = 72</td>
+<td>10 &#215; 8 = 80</td>
+</tr>
+<tr>
+<td>
+<p>6 &#215; 9 = 54</p>
+</td>
+<td>7 &#215; 9 = 63</td>
+<td>8 &#215; 9 = 72</td>
+<td>9 &#215; 9 = 81</td>
+<td>10 &#215; 9 = 90</td>
+</tr>
+<tr>
+<td>
+<p>6 &#215; 10 = 60</p>
+</td>
+<td>7 &#215; 10 = 70</td>
+<td>8 &#215; 10 = 80</td>
+<td>9 &#215; 10 = 90</td>
+<td>10 &#215; 10 = 100</td>
+</tr>
+</tbody>
+</table>
+  <br/>
+	<br/>
+  <table>
+<tbody>
+<tr>
+<td><strong>Table of 11</strong></td>
+<td><strong>Table of 12</strong></td>
+<td><strong>Table of 13</strong></td>
+<td><strong>Table of 14</strong></td>
+<td><strong>Table of 15</strong></td>
+</tr>
+<tr>
+<td>11 &#215; 1 = 11</td>
+<td>12 &#215; 1 = 12</td>
+<td>
+<p>13 &#215; 1 = 13</p>
+</td>
+<td>14 &#215; 1 = 14</td>
+<td>15 &#215; 1 = 15</td>
+</tr>
+<tr>
+<td>11 &#215; 2 = 22</td>
+<td>12 &#215; 2 = 24</td>
+<td>
+<p>13 &#215; 2 = 26</p>
+</td>
+<td>
+<p>14 &#215; 2 = 28</p>
+</td>
+<td>
+<p>15 &#215; 2 = 30</p>
+</td>
+</tr>
+<tr>
+<td>11 &#215; 3 = 33</td>
+<td>12 &#215; 3 = 36</td>
+<td>
+<p>13 &#215; 3 = 39</p>
+</td>
+<td>14 &#215; 3 = 42</td>
+<td>
+<p>15 &#215; 3 = 45</p>
+</td>
+</tr>
+<tr>
+<td>11 &#215; 4 = 44</td>
+<td>12 &#215; 4 = 48</td>
+<td>
+<p>13 &#215; 4 = 52</p>
+</td>
+<td>
+<p>14 &#215; 4 = 56</p>
+</td>
+<td>
+<p>15 &#215; 4 = 60</p>
+</td>
+</tr>
+<tr>
+<td>11 &#215; 5 = 55</td>
+<td>12 &#215; 5 = 60</td>
+<td>
+<p>13 &#215; 5 = 65</p>
+</td>
+<td>
+<p>14 &#215; 5 = 70</p>
+</td>
+<td>
+<p>15 &#215; 5 = 75</p>
+</td>
+</tr>
+<tr>
+<td>11 &#215; 6 = 66</td>
+<td>12 &#215; 6 = 72</td>
+<td>
+<p>13 &#215; 6 = 78</p>
+</td>
+<td>
+<p>14 &#215; 6 = 84</p>
+</td>
+<td>
+<p>15 &#215; 6 = 90</p>
+</td>
+</tr>
+<tr>
+<td>11 &#215; 7 = 77</td>
+<td>12 &#215; 7 = 84</td>
+<td>
+<p>13 &#215; 7 = 91</p>
+</td>
+<td>
+<p>14 &#215; 7 = 98</p>
+</td>
+<td>
+<p>15 &#215; 7 = 105</p>
+</td>
+</tr>
+<tr>
+<td>11 &#215; 8 = 88</td>
+<td>12 &#215; 8 = 96</td>
+<td>
+<p>13 &#215; 8 = 104</p>
+</td>
+<td>
+<p>14 &#215; 8 = 112</p>
+</td>
+<td>
+<p>15 &#215; 8 = 120</p>
+</td>
+</tr>
+<tr>
+<td>11 &#215; 9 = 99</td>
+<td>12 &#215; 9 = 108</td>
+<td>
+<p>13 &#215; 9 = 117</p>
+</td>
+<td>
+<p>14 &#215; 9 = 126</p>
+</td>
+<td>
+<p>15 &#215; 9 = 135</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>11 &#215; 10 = 110</p>
+</td>
+<td>12 &#215; 10 = 120</td>
+<td>13 &#215; 10 = 130</td>
+<td>14 &#215; 10 = 140</td>
+<td>15 &#215; 10 = 150</td>
+</tr>
+</tbody>
+</table> 
+<br/>
+		<br/>
+<table>
+<tbody>
+<tr>
+<td><strong>Table of 16</strong></td>
+<td><strong>Table of 17</strong></td>
+<td><strong>Table of 18</strong></td>
+<td><strong>Table of 19</strong></td>
+<td><strong>Table of 20</strong></td>
+</tr>
+<tr>
+<td>
+<p>16 &#215; 1 = 16</p>
+</td>
+<td>17 &#215; 1 = 17</td>
+<td>18 &#215; 1 = 18</td>
+<td>19 &#215; 1 = 19</td>
+<td>20 &#215; 1 = 20</td>
+</tr>
+<tr>
+<td>
+<p>16 &#215; 2 = 32</p>
+</td>
+<td>17 &#215; 2 = 34</td>
+<td>18 &#215; 2 = 36</td>
+<td>19 &#215; 2 = 38</td>
+<td>20 &#215; 2 = 40</td>
+</tr>
+<tr>
+<td>
+<p>16 &#215; 3 = 48</p>
+</td>
+<td>17 &#215; 3 = 51</td>
+<td>18 &#215; 3 = 54</td>
+<td>19 &#215; 3 = 57</td>
+<td>20 &#215; 3 = 60</td>
+</tr>
+<tr>
+<td>
+<p>16 &#215; 4 = 64</p>
+</td>
+<td>17 &#215; 4 = 68</td>
+<td>18 &#215; 4 = 72</td>
+<td>19 &#215; 4 = 76</td>
+<td>20 &#215; 4 = 80</td>
+</tr>
+<tr>
+<td>
+<p>16 &#215; 5 = 80</p>
+</td>
+<td>17 &#215; 5 = 85</td>
+<td>18 &#215; 5 = 90</td>
+<td>19 &#215; 5 = 95</td>
+<td>20 &#215; 5 = 100</td>
+</tr>
+<tr>
+<td>
+<p>16 &#215; 6 = 96</p>
+</td>
+<td>17 &#215; 6 = 102</td>
+<td>18 &#215; 6 = 108</td>
+<td>19 &#215; 6 = 114</td>
+<td>20 &#215; 6 = 120</td>
+</tr>
+<tr>
+<td>
+<p>16 &#215; 7 = 112</p>
+</td>
+<td>17 &#215; 7 = 119</td>
+<td>18 &#215; 7 = 126</td>
+<td>19 &#215; 7 = 133</td>
+<td>20 &#215; 7 = 140</td>
+</tr>
+<tr>
+<td>
+<p>16 &#215; 8 = 128</p>
+</td>
+<td>17 &#215; 8 = 136</td>
+<td>18 &#215; 8 = 144</td>
+<td>19 &#215; 8 = 152</td>
+<td>20 &#215; 8 = 160</td>
+</tr>
+<tr>
+<td>
+<p>16 &#215; 9 = 144</p>
+</td>
+<td>17 &#215; 9 = 153</td>
+<td>18 &#215; 9 = 162</td>
+<td>19 &#215; 9 = 171</td>
+<td>20 &#215; 9 = 180</td>
+</tr>
+<tr>
+<td>
+<p>16 &#215; 10 = 160</p>
+</td>
+<td>17 &#215; 10 = 170</td>
+<td>18 &#215; 10 = 180</td>
+<td>19 &#215; 10 = 190</td>
+<td>20 &#215; 10 = 200</td>
+</tr>
+</tbody>
+</table>
+<h2 id="privacy-policy">のプライバシーポリシー 電卓</h2>
+
+<p>https&#65306;// www&#12290;電卓.online /からアクセスできる電卓では&#12289;私たちの主な優先事項の1つは&#12289;訪問者のプライバシーです&#12290;このプライバシーポリシー文書には&#12289;電卓が収集および記録する情報の種類とその使用方法が含まれています&#12290;</p>
+
+<p>ご不明な点がある場合や&#12289;プライバシーポリシーについてさらに詳しい情報が必要な場合は&#12289;お気軽にお問い合わせください&#12290;</p>
+
+<p>このプライバシーポリシーは&#12289;当社のオンラインアクティビティにのみ適用され&#12289;電卓で共有および/または収集した情報に関して&#12289;当社のWebサイトへの訪問者に有効です&#12290;このポリシーは&#12289;オフラインまたはこのWebサイト以外のチャネルを介して収集された情報には適用されません&#12290;</p>
+
+<h2>同意</h2>
+
+<p>当社のウェブサイトを使用することにより&#12289;お客様は当社のプライバシーポリシーに同意し&#12289;その条件に同意するものとします&#12290;</p>
+
+<h2>私たちが収集する情報</h2>
+
+<p>ご提供をお願いする個人情報およびその理由は&#12289;ご提供をお願いする時点で明確にさせていただきます&#12290;</p>
+<p>あなたが直接私たちに連絡する場合&#12289;あなたの名前&#12289;電子メールアドレス&#12289;電話番号&#12289;あなたが私たちに送るかもしれないメッセージや添付ファイルの内容&#12289;そしてあなたが提供することを選択するかもしれない他の情報などのあなたに関する追加情報を受け取るかもしれません&#12290;</p>
+<p>アカウントに登録する際に&#12289;氏名&#12289;会社名&#12289;住所&#12289;メールアドレス&#12289;電話番号などの連絡先情報をお伺いする場合があります&#12290;</p>
+
+<h2>お客様の情報の使用方法</h2>
+
+<p>収集した情報は&#12289;次のようなさまざまな方法で使用します&#12290;</p>
+
+<ul>
+<li>当社のウェブサイトを提供&#12289;運営&#12289;維持する</li>
+<li>当社のウェブサイトを改善&#12289;パーソナライズ&#12289;および拡張する</li>
+<li>当社のウェブサイトの使用方法を理解し&#12289;分析します</li>
+<li>新しい製品&#12289;サービス&#12289;機能&#12289;および機能を開発する</li>
+<li>直接または当社のパートナーの1つを介して&#12289;カスタマーサービスを含め&#12289;お客様と連絡を取り&#12289;Webサイトに関連する最新情報やその他の情報を提供し&#12289;マーケティングおよびプロモーションの目的でお客様に連絡します&#12290;</li>
+<li>あなたにメールを送る</li>
+<li>詐欺を見つけて防止する</li>
+</ul>
+
+<h2>ログファイル</h2>
+
+<p>電卓は&#12289;ログファイルを使用する標準的な手順に従います&#12290;これらのファイルは&#12289;訪問者がWebサイトにアクセスしたときにログに記録します&#12290;すべてのホスティング会社がこれを行い&#12289;ホスティングサービスの分析の一部を行います&#12290;ログファイルによって収集される情報には&#12289;インターネットプロトコル&#65288;IP&#65289;アドレス&#12289;ブラウザーの種類&#12289;インターネットサービスプロバイダー&#65288;ISP&#65289;&#12289;日付とタイムスタンプ&#12289;参照/終了ページ&#12289;および場合によってはクリック数が含まれます&#12290;これらは&#12289;個人を特定できる情報にはリンクされていません&#12290;この情報の目的は&#12289;傾向の分析&#12289;サイトの管理&#12289;Webサイトでのユーザーの動きの追跡&#12289;および人口統計情報の収集です&#12290;</p>
+
+<h2>クッキーとウェブビーコン</h2>
+
+<p>他のウェブサイトと同様に&#12289;電卓は&#12300;クッキー&#12301;を使用します&#12290;これらのCookieは&#12289;訪問者の好みや&#12289;訪問者がアクセスまたは訪問したWebサイト上のページなどの情報を保存するために使用されます&#12290;この情報は&#12289;訪問者のブラウザの種類やその他の情報に基づいてWebページのコンテンツをカスタマイズすることにより&#12289;ユーザーエクスペリエンスを最適化するために使用されます&#12290;</p>
+
+<p>Cookieのより一般的な情報については&#12289;以下をお読みください&#12290; <a href="https://ja.wikipedia.org/wiki/HTTP_cookie">"クッキーとは"</a>.</p>
+
+<h2>Google DoubleClick DART Cookie</h2>
+
+<p>Googleは&#12289;当サイトのサードパーティベンダーの1つです&#12290;また&#12289;DART Cookieと呼ばれるCookieを使用して&#12289;www.website.comやインターネット上の他のサイトへのアクセスに基づいてサイト訪問者に広告を配信します&#12290;ただし&#12289;訪問者は&#12289;次のURLにあるGoogle広告およびコンテンツネットワークのプライバシーポリシーにアクセスして&#12289;DARTCookieの使用を拒否することを選択できます&#12290; &#8211; <a href="https://policies.google.com/technologies/ads">https://policies.google.com/technologies/ads</a></p>
+
+
+<h2>広告パートナーのプライバシーポリシー</h2>
+
+<p>このリストを参照して&#12289;電卓の各広告パートナーのプライバシーポリシーを見つけることができます&#12290;</p>
+
+<p>サードパーティの広告サーバーまたは広告ネットワークは&#12289;ユーザーのブラウザに直接送信される電卓に表示されるそれぞれの広告およびリンクで使用されるCookie&#12289;JavaScript&#12289;またはWebビーコンなどのテクノロジを使用します&#12290;これが発生すると&#12289;彼らは自動的にあなたのIPアドレスを受け取ります&#12290;これらのテクノロジーは&#12289;広告キャンペーンの効果を測定したり&#12289;アクセスしたWebサイトに表示される広告コンテンツをパーソナライズしたりするために使用されます&#12290;</p>
+
+<p>計算機は&#12289;サードパーティの広告主が使用するこれらのCookieにアクセスしたり制御したりすることはできません&#12290;</p>
+
+<h2>サードパーティのプライバシーポリシー</h2>
+
+<p>電卓のプライバシーポリシーは&#12289;他の広告主やウェブサイトには適用されません&#12290;したがって&#12289;詳細については&#12289;これらのサードパーティの広告サーバーのそれぞれのプライバシーポリシーを参照することをお勧めします&#12290;特定のオプションをオプトアウトする方法についての実践と指示が含まれる場合があります&#12290; </p>
+
+<p>個々のブラウザオプションからCookieを無効にすることを選択できます&#12290;特定のWebブラウザでのCookie管理の詳細については&#12289;ブラウザのそれぞれのWebサイトを参照してください&#12290;</p>
+
+<h2>CCPAプライバシー権&#65288;私の個人情報を販売しないでください&#65289;</h2>
+
+<p>CCPAの下では&#12289;他の権利の中でも&#12289;カリフォルニアの消費者は次の権利を有します&#12290;</p>
+<p>消費者の個人データを収集する企業に&#12289;企業が消費者に関して収集した個人データのカテゴリと特定の部分を開示するように要求します&#12290;</p>
+<p>企業が収集した消費者に関する個人データを削除するよう企業に要求します&#12290;</p>
+<p>消費者の個人データを販売するのではなく&#12289;消費者の個人データを販売する企業に依頼してください&#12290;</p>
+<p>ご要望がございましたら&#12289;1ヶ月以内に対応させていただきます&#12290;これらの権利の行使をご希望の場合は&#12289;お問い合わせください&#12290;</p>
+
+<h2>GDPRデータ保護権</h2>
+
+<p>お客様がすべてのデータ保護権を十分に認識していることを確認したいと思います&#12290;すべてのユーザーは&#12289;次の権利があります&#12290;</p>
+<p>アクセスする権利&#8211;あなたにはあなたの個人データのコピーを要求する権利があります&#12290;このサービスには少額の料金がかかる場合があります&#12290;</p>
+<p>訂正する権利&#8211;お客様には&#12289;不正確であると思われる情報の訂正を要求する権利があります&#12290;また&#12289;不完全であると思われる情報の記入を要求する権利もあります&#12290;</p>
+<p>消去する権利&#8211;お客様には&#12289;特定の条件下で&#12289;お客様の個人データの消去を要求する権利があります&#12290;</p>
+<p>処理を制限する権利&#8211;お客様には&#12289;特定の条件下で&#12289;お客様の個人データの処理を制限するよう要求する権利があります&#12290;</p>
+<p>処理に異議を唱える権利&#8211;特定の条件下で&#12289;個人データの処理に異議を唱える権利があります&#12290;</p>
+<p>データの移植性に対する権利&#8211;お客様には&#12289;特定の条件下で&#12289;収集したデータを別の組織に転送するか&#12289;直接お客様に転送するよう要求する権利があります&#12290;</p>
+<p>ご要望がございましたら&#12289;1ヶ月以内に対応させていただきます&#12290;これらの権利の行使をご希望の場合は&#12289;お問い合わせください&#12290;</p>
+
+<h2>子供の情報</h2>
+
+<p>私たちの優先事項のもう1つの部分は&#12289;インターネットの使用中に子供を保護することです&#12290;保護者の方には&#12289;オンラインアクティビティを観察&#12289;参加&#12289;監視&#12289;指導することをお勧めします&#12290;</p>
+
+<p>電卓は&#12289;13歳未満のお子様から故意に個人を特定できる情報を収集することはありません&#12290;お子様がこの種の情報を当社のWebサイトで提供したと思われる場合は&#12289;すぐにご連絡いただくことを強くお勧めします&#12290;迅速に削除するよう最善を尽くします&#12290;私たちの記録からのそのような情報&#12290;</p>
+		<br/>
+		<br/>
+		<center>
+		&#169; 2021 <a href="/"><b>www.電卓.online</b></a>
+			</center>
+	   </div>
+	   </div>
+	  </footer>
+</div>
+
+</body>
+</html>
